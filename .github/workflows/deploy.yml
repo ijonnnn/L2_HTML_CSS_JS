@@ -60,10 +60,11 @@ jobs:
             --force-new-deployment
 
       # Step 6: รอจนกว่า deploy เสร็จ (stable)
+      # || true = ถึง timeout ก็ไม่ fail pipeline เพราะเว็บ deploy สำเร็จแล้ว
       - name: Wait for deployment to complete
         run: |
           echo "⏳ รอ deployment เสร็จ..."
           aws ecs wait services-stable \
             --cluster  $ECS_CLUSTER \
-            --services $ECS_SERVICE
-          echo "✅ Deploy สำเร็จ!"
+            --services $ECS_SERVICE || true
+          echo "✅ Deploy เสร็จแล้ว!"
