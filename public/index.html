@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hello World — AWS Deployed</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================
+       Hero Section — ส่วนบนสุดของหน้าเว็บ
+       ========================================== -->
+  <header class="hero">
+    <div class="hero-content">
+      <h1>Hello, World!</h1>
+      <p>Web App ที่ Deploy บน AWS ECS + DynamoDB</p>
+      <div class="badge-group">
+        <span class="badge">🐳 Docker</span>
+        <span class="badge">☁️ ECS Fargate</span>
+        <span class="badge">🗄️ DynamoDB</span>
+        <span class="badge">⚡ GitHub Actions</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================
+       Main Content
+       ========================================== -->
+  <main class="container">
+
+    <!-- ส่วนที่ 1: Form สำหรับเขียน Comment -->
+    <section class="card">
+      <h2>💬 เขียน Comment</h2>
+      <form id="commentForm">
+
+        <div class="form-group">
+          <label for="name">ชื่อ</label>
+          <input
+            type="text"
+            id="name"
+            placeholder="ชื่อของคุณ"
+            maxlength="100"
+            required
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="message">ข้อความ</label>
+          <textarea
+            id="message"
+            placeholder="เขียนข้อความอะไรก็ได้..."
+            maxlength="500"
+            rows="3"
+            required
+          ></textarea>
+        </div>
+
+        <button type="submit" id="submitBtn">ส่ง Comment</button>
+
+        <!-- แสดงข้อความ success หรือ error หลังกดส่ง -->
+        <p id="formMessage" class="form-message"></p>
+
+      </form>
+    </section>
+
+    <!-- ส่วนที่ 2: รายการ Comments ทั้งหมด -->
+    <section class="card">
+      <h2>📋 Comments ทั้งหมด</h2>
+
+      <!-- JavaScript จะมาแทนที่ div นี้ด้วย comment cards -->
+      <div id="comments">
+        <p class="loading">⏳ กำลังโหลด...</p>
+      </div>
+
+      <!-- JavaScript จะมาแทนที่ div นี้ด้วยปุ่ม pagination -->
+      <div id="pagination"></div>
+
+    </section>
+
+  </main>
+
+  <!-- โหลด JavaScript ตอนท้ายสุด (หลังจาก HTML โหลดครบแล้ว) -->
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "hello-world-comments",
+  "version": "1.0.0",
+  "description": "Hello World + Comment System deployed on AWS ECS + RDS PostgreSQL",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3"
+  }
+}
